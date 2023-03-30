@@ -4,12 +4,13 @@ on: [push]
 jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
-    name: hello-world
+   
     steps:
-      - run: echo "Hello world"
-    name: run-python-script
-    steps:
-      -run: |
-        pip install requirements.txt
-        python ci.py
+      - uses: actions/checkout@v3
+      - name: hello-world
+        run: echo "Hello world"
+      - name: run-python-script
+        run: |
+          pip install requirements.txt
+          python ci.py
      
